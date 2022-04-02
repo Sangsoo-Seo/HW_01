@@ -1,6 +1,8 @@
 ---
 title: "Homework01"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -83,13 +85,15 @@ Intuitively, they have positive corelation, because it runs fine whether on the 
 
 ###Exercise 3.
 ```{r}
+install.packages("forcats", repos = "http://cran.us.r-project.org")
 library(forcats)
+library(ggplot2)
+library(tidyverse)
 
-data %>%
+mpg %>%
   ggplot(aes(x = fct_infreq(manufacturer))) +
-        geom_bar() + 
-        coord_flip() + 
-        labs(x = "count")
+  geom_bar() + coord_flip() + 
+  labs(x = "count")
 ```
 
 Dodge produced the most cars and Lincoln produced the least cars. 
