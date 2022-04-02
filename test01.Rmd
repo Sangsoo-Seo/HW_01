@@ -49,8 +49,10 @@ However, both have an issue of over-fitting if the model has too many features.
 
 ###Question 6.
 1) Predictive. 
+The main purpose it to predict y, which is voted candidates.
 
 2) Inferential. 
+This is because, we want to know about the significant of features such as contact with the candidate. 
 
 
 
@@ -67,12 +69,16 @@ ggplot(mpg, aes(x = hwy)) +
         geom_histogram()
 ```
 
+Most cars can travel less than 30 miles. It is distributed around 16/17 and 26/27 - bimodal. 
+
 
 ###Exercise 2.
 ```{r}
 ggplot(mpg, aes(x = hwy, y = cty)) + 
         geom_point()
 ```
+
+Intuitively, they have positive corelation, because it runs fine whether on the cty or the hwy. Moreover, most cars are travel less than 23 cty, similar result as in the previous question. 
 
 
 ###Exercise 3.
@@ -86,12 +92,18 @@ data %>%
         labs(x = "count")
 ```
 
+Dodge produced the most cars and Lincoln produced the least cars. 
+
 
 ###Exercise 4.
 ```{r}
 ggplot(mpg, aes(x = as.character(cyl), y = hwy)) + 
         geom_boxplot()
 ```
+
+If a car have less cyl, it could travel more.
+If a car have more cyl, it could travel less.
+The lowest and highest value of cyl have outliers.
 
 
 ###Exercise 5.
@@ -102,6 +114,9 @@ library(corrplot)
 M = cor(mpg %>% dplyr::select(where(is.numeric)))
 corrplot(M, method = "number", type = "lower")
 ```
+
+hwy-cty, cyl-displ are strongly positively correlated and year-displ, cyl-year are weakly correlated. On the other hand, cty-displ, hwy-displ, cty-cyl, hwy-cyl are strongly negatively correlated and cty-year are weakly correlate. hwy-year seems independent.
+These are expected results. 
 
 
 ###Exercise 6.
