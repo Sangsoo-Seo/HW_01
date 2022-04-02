@@ -60,9 +60,9 @@ This is because, we want to know about the significant of features such as conta
 
 ###Exercise 1.
 ```{r}
-install.packages("ggplot2", repos = "http://cran.us.r-project.org"))
+install.packages("ggplot2", repos = "http://cran.us.r-project.org")
 library(ggplot2)
-install.packages("tidyverse", repos = "http://cran.us.r-project.org"))
+install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library(tidyverse)
 
 ggplot(mpg, aes(x = hwy)) + 
@@ -108,7 +108,7 @@ The lowest and highest value of cyl have outliers.
 
 ###Exercise 5.
 ```{r}
-install.packages("corrplot", repos = "http://cran.us.r-project.org"))
+install.packages("corrplot", repos = "http://cran.us.r-project.org")
 library(corrplot)
 
 M = cor(mpg %>% dplyr::select(where(is.numeric)))
@@ -121,7 +121,7 @@ These are expected results.
 
 ###Exercise 6.
 ```{r}
-install.packages('ggthemes', repos = "http://cran.us.r-project.org"))
+install.packages('ggthemes', repos = "http://cran.us.r-project.org")
 library(ggthemes)
 
 ggplot(mpg, aes(x = hwy, y = class)) + 
